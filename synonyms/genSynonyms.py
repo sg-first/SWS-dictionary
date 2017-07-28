@@ -11,7 +11,7 @@ def tonum(id):
     return ra+rb+rc
 
 
-str=help.readTXT("D:/TCproject/NLP/dic/synonyms(sou).txt")
+str=help.readTXT("synonymsList(sou).txt")
 list=str.split("\n")
 jsonlist={} #{now1:{now2:[[word,id]……]}}
 now1=""
@@ -37,4 +37,4 @@ for sen in list:
     jsonlist[now1][now2].append([word,id])
 
 jsoncode=json.dumps(jsonlist,ensure_ascii=False)
-help.writeTXT("D:/123.txt",jsoncode)
+help.writeTXT("synonymsList(gen).txt",jsoncode)

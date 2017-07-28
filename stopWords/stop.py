@@ -8,9 +8,7 @@ def init(path):
 
 def isStopWord(word):
     nowhead=help.gethead(word)
-    for k in stoplist.keys():
-        if k==nowhead:
-            for i in stoplist[k]:
-                if i==word:
-                    return True
-            return False #循环完了都没有
+    if nowhead in stoplist.keys():
+        if word in stoplist[nowhead]:
+            return True
+    return False
