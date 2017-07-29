@@ -14,10 +14,19 @@ def getid(word):
             for i in synlist[now1][now2]:
                 if i[0]==word:
                     return i[1]
-    return -1 #fix:找不到返回什么
+    return -1
 
 def getDistance(word1,word2):
-    return abs(getid(word1)-getid(word2))
+    id1=getid(word1)
+    id2=getid(word2)
+    if id1==-1 or id2==-1:
+        return -1
+    else:
+        return abs(id1-id2)
 
 def isSynonyms(word1,word2,threshold=0):
-    return getDistance(word1,word2)<=threshold
+    distance=getDistance(word1,word2)
+    if distance==-1:
+        return False
+    else:
+        return distance<=threshold
