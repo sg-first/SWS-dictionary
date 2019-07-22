@@ -12,3 +12,5 @@ def isStopWord(word):
         if word in stoplist[nowhead]:
             return True
     return False
+
+init('stopWordList(gen).txt')
