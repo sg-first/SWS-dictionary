@@ -30,3 +30,5 @@ def isSynonyms(word1,word2,threshold=0):
         return False
     else:
         return distance<=threshold
+
+    init('synonymsList(gen).txt')
