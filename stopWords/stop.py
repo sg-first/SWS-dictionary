@@ -7,9 +7,8 @@ def init(path):
     stoplist=json.loads(jsoncode)
 
 def isStopWord(word):
-    nowhead=help.gethead(word)
-    if nowhead in stoplist.keys():
-        if word in stoplist[nowhead]:
+    if word[0] in stoplist.keys():
+        if word in stoplist[word[0]]:
             return True
     return False
 
